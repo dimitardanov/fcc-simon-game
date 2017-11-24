@@ -1,0 +1,7 @@
+node_modules/*
+coverage
+builds
+.sass-cache
+*~
+*.swp
+.DS_Store
