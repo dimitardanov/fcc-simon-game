@@ -1,0 +1,31 @@
+
+.color-button {
+  width: 50%;
+  height: 50%;
+  border: 5px solid $gray-base;
+}
+
+
+.green {
+  border-top-left-radius: 100%;
+  @include color-button(
+    $green-base, $green-darker, $green-light, circle at right bottom);
+}
+
+.red {
+  border-top-right-radius: 100%;
+  @include color-button(
+    $red-base, $red-dark, $red-light, circle at left bottom);
+}
+
+.yellow {
+  border-bottom-left-radius: 100%;
+  @include color-button(
+    $yellow-base, $yellow-darker, $yellow-lighter, circle at right top);
+}
+
+.blue {
+  border-bottom-right-radius: 100%;
+  @include color-button(
+    $blue-base, $blue-darker, $blue-lighter, circle at left top);
+}
