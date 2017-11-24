@@ -1,0 +1,12 @@
+
+.game-controls {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 10px solid $gray-base;
+  background-color: $gray-lighter;
+}
