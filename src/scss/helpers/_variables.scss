@@ -1,1 +1,47 @@
 // _variables
+
+
+// Colors:
+
+// Grays:
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+
+
+$red-base:                red;
+$red-lightest:            lighten($red-base, 25%);
+$red-lighter:             lighten($red-base, 15%);
+$red-light:               lighten($red-base, 10%);
+$red-dark:                darken($red-base, 20%);
+$red-darker:              darken($red-base, 25%);
+$red-darkest:             darken($red-base, 33%);
+
+$green-base:              green;
+$green-lightest:          lighten($green-base, 33%);
+$green-lighter:           lighten($green-base, 20%);
+$green-light:             lighten($green-base, 10%);
+$green-dark:              darken($green-base, 7%);
+$green-darker:            darken($green-base, 10%);
+$green-darkest:           darken($green-base, 15%);
+
+$yellow-base:             yellow;
+$yellow-lightest:         lighten($yellow-base, 33%);
+$yellow-lighter:          lighten($yellow-base, 20%);
+$yellow-light:            lighten($yellow-base, 10%);
+$yellow-dark:             darken($yellow-base, 10%);
+$yellow-darker:           darken($yellow-base, 20%);
+$yellow-darkest:          darken($yellow-base, 33%);
+
+$blue-base:               blue;
+$blue-lightest:           lighten($blue-base, 33%);
+$blue-lighter:            lighten($blue-base, 20%);
+$blue-light:              lighten($blue-base, 10%);
+$blue-dark:               darken($blue-base, 10%);
+$blue-darker:             darken($blue-base, 20%);
+$blue-darkest:            darken($blue-base, 33%);
