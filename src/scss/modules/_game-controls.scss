@@ -9,4 +9,21 @@
   border-radius: 50%;
   border: 10px solid $gray-base;
   background-color: $gray-lighter;
+  overflow: hidden;
+}
+
+.panel,
+.switch {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.panel {
+  justify-content: space-evenly;
+}
+
+.switch {
+  justify-content: center;
 }
