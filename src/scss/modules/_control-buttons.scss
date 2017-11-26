@@ -1,0 +1,16 @@
+
+.btn-start {
+  @include control-button($green-light);
+}
+
+.btn-strict {
+  @include control-button($yellow-dark);
+
+  &.active {
+    @include control-button-active($yellow-light);
+
+    &::after {
+      box-shadow: 0 0 4px $yellow-lighter;
+    }
+  }
+}
