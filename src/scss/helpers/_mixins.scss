@@ -6,15 +6,7 @@
     $color-dark 0,
     $color-light 100%);
 
-  &:hover {
-    background-image: radial-gradient(
-      $position,
-      $color-base 0,
-      $color-dark 100%
-    );
-  }
-
-  &:active {
+  &.active {
     background-image: radial-gradient(
       $position,
       $color-light 0,
