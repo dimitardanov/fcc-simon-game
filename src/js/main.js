@@ -122,6 +122,7 @@ function continueGame(correct) {
       btnContainerHTML.addEventListener('click', colorButtonHandler);
     } else if (level == seq.length) {
       console.log('you win');
+      gameOverSequence();
       setTimeout(function() {
         newGame();
       }, 2000);
@@ -173,5 +174,21 @@ function playSequence(seq) {
     setTimeout(function() {
       playSequence(seq.slice(1));
     }, 1000);
+  }
+}
+
+function gameOverSequence() {
+  for (var i = 0; i < 3; i++) {
+    console.log(i);
+    setTimeout(function() {
+      for (var j = 0; j < 4; j++) {
+        btnColor[j].classList.add('active');
+      }
+    }, 500 * i);
+    setTimeout(function() {
+      for (var j = 0; j < 4; j++) {
+        btnColor[j].classList.remove('active');
+      }
+    }, 500 * i + 200);
   }
 }
