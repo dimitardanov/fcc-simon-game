@@ -39,13 +39,11 @@ onSwitchHTML.addEventListener('click', function(event) {
 });
 
 function turnSimonOn() {
-  console.log('Simon on');
   btnStartHTML.addEventListener('click', startGame);
   btnStrictHTML.addEventListener('click', toggleStrictMode);
 }
 
 function turnSimonOff() {
-  console.log('Simon off');
   btnStartHTML.removeEventListener('click', startGame);
   btnStrictHTML.removeEventListener('click', toggleStrictMode);
   btnContainerHTML.removeEventListener('click', colorButtonHandler);
@@ -53,7 +51,6 @@ function turnSimonOff() {
 }
 
 function startGame(event) {
-  console.log('start game');
   newGame();
 }
 
@@ -69,11 +66,6 @@ function newGame() {
 }
 
 function toggleStrictMode(event) {
-  if (!event.target.classList.contains('active')) {
-    console.log('switching strict mode on');
-  } else {
-    console.log('switching strict mode off');
-  }
   event.target.classList.toggle('active');
 }
 
@@ -121,7 +113,6 @@ function continueGame(correct) {
     if (stepInd <= level - 1) {
       btnContainerHTML.addEventListener('click', colorButtonHandler);
     } else if (level == seq.length) {
-      console.log('you win');
       gameOverSequence();
       setTimeout(function() {
         newGame();
@@ -180,7 +171,6 @@ function playSequence(seq) {
 function gameOverSequence() {
   statusHTML.textContent = '+1';
   for (var i = 0; i < 3; i++) {
-    console.log(i);
     setTimeout(function() {
       for (var j = 0; j < 4; j++) {
         btnColor[j].classList.add('active');
