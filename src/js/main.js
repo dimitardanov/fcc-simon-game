@@ -58,7 +58,7 @@ function startGame(event) {
 }
 
 function newGame() {
-  var seq = createGameSequence(4, 4);
+  var seq = createGameSequence(4, 20);
   gameControls.setAttribute('data-sequence', seq);
   statusHTML.textContent = 1;
   statusHTML.setAttribute('data-step', 0);
