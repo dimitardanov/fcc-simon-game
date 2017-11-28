@@ -178,6 +178,7 @@ function playSequence(seq) {
 }
 
 function gameOverSequence() {
+  statusHTML.textContent = '+1';
   for (var i = 0; i < 3; i++) {
     console.log(i);
     setTimeout(function() {
