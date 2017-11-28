@@ -56,15 +56,12 @@
   }
 }
 
-@mixin control-button-active($color) {
+@mixin control-button-active() {
   &::before,
   &::after {
     transform: translate(-50%, 1px);
   }
   &::before {
     box-shadow: 0 0 1px $gray-light;
-  }
-  &::after {
-    background-color: $color;
   }
 }

@@ -7,9 +7,10 @@
   @include control-button($yellow-dark);
 
   &.active {
-    @include control-button-active($yellow-light);
+    @include control-button-active();
 
-    &::after {
+    &.on::after {
+      background-color: $yellow-light;
       box-shadow: 0 0 4px $yellow-lighter;
     }
   }
