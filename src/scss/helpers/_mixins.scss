@@ -52,7 +52,7 @@
   }
 
   &:active {
-    @include control-button-active($color);
+    @include control-button-active();
   }
 }
 
