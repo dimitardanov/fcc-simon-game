@@ -73,9 +73,9 @@ function createAudioElements(parent, sources) {
   var audio = [];
   for (let i = 0; i < sources.length; i++) {
     audio.push(document.createElement('audio'));
+    audio[i].setAttribute('src', sources[i]);
+    audio[i].setAttribute('type', 'audio/mpeg');
     audio[i].setAttribute('preload', 'auto');
-    var src = '<source src="' + sources[i] + '" type="audio/mpeg">';
-    audio[i].insertAdjacentHTML('beforeend', src);
     parent.appendChild(audio[i]);
   }
   return audio;
