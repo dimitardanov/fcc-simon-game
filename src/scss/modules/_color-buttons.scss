@@ -1,7 +1,9 @@
 
 .color-button {
-  width: 50%;
-  height: 50%;
+  width: 195px;
+  height: 195px;
+  flex-grow: 0;
+  flex-shrink: 0;
   border: 5px solid $gray-base;
 }
 
