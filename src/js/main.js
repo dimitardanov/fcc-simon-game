@@ -7,6 +7,8 @@ const FREQUENCIES = [
   329.628           // blue
 ];
 
+const NOTEDURATION = 0.3;
+
 const Audio = require('./lib/audio.js').Audio;
 var audio;
 
@@ -76,16 +78,16 @@ function toggleStrictMode(event) {
   event.target.classList.toggle('active');
 }
 
-function playSound(audioArr, ind) {
+function playSoundFor(ind) {
   var noteFrequency = FREQUENCIES[ind];
-  audio.playSoundFor(noteFrequency, 0.3);
+  audio.playSoundFor(noteFrequency, NOTEDURATION);
 }
 
 function colorButtonHandler(event) {
   if (event.target.classList.contains('color-button')) {
     var ind = Number(event.target.getAttribute('data-sound'));
     colorButtonFeedback(ind);
-    playSound(audio, ind);
+    playSoundFor(ind);
     var level = Number(statusHTML.textContent) - 1;
     var stepInd = Number(statusHTML.getAttribute('data-step'));
     var seq = gameControls.getAttribute('data-sequence');
@@ -156,7 +158,7 @@ function playSequence(seq) {
   if (seq.length > 0 && onSwitchHTML.classList.contains('on')) {
     var ind = Number(seq[0]);
     colorButtonFeedback(ind);
-    playSound(audio, ind);
+    playSoundFor(ind);
     setTimeout(function() {
       playSequence(seq.slice(1));
     }, 1000);
