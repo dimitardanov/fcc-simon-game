@@ -1,10 +1,14 @@
 
-const audioSrc = [
-  'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3',
-  'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3',
-  'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3',
-  'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'
+// Notes
+const FREQUENCIES = [
+  329.628 / 2,      // green
+  440,              // red
+  277.18,           // yellow
+  329.628           // blue
 ];
+
+const Audio = require('./lib/audio.js').Audio;
+var audio;
 
 const btnContainerHTML = document.querySelector('.container');
 
@@ -24,8 +28,6 @@ const btnStrictHTML = document.querySelector('.btn-strict');
 const statusHTML = document.querySelector('.status-display');
 
 const bodyHTML = document.querySelector('body');
-
-const audio = createAudioElements(bodyHTML, audioSrc);
 
 onSwitchHTML.addEventListener('click', function(event) {
   if (!onSwitchHTML.classList.contains('on')) {
@@ -48,10 +50,15 @@ function turnSimonOff() {
   btnStrictHTML.removeEventListener('click', toggleStrictMode);
   btnContainerHTML.removeEventListener('click', colorButtonHandler);
   statusHTML.textContent = '--';
+  audio.rampDownGainsFor(0.2);
 }
 
 function startGame(event) {
   newGame();
+  if (!audio) {
+    audio = new Audio();
+    audio.startOscillators();
+  }
 }
 
 function newGame() {
@@ -69,21 +76,9 @@ function toggleStrictMode(event) {
   event.target.classList.toggle('active');
 }
 
-function createAudioElements(parent, sources) {
-  var audio = [];
-  for (let i = 0; i < sources.length; i++) {
-    audio.push(document.createElement('audio'));
-    audio[i].setAttribute('src', sources[i]);
-    audio[i].setAttribute('type', 'audio/mpeg');
-    audio[i].setAttribute('preload', 'auto');
-    parent.appendChild(audio[i]);
-  }
-  return audio;
-}
-
 function playSound(audioArr, ind) {
-  audioArr[ind].currentTime = 0;
-  audioArr[ind].play();
+  var noteFrequency = FREQUENCIES[ind];
+  audio.playSoundFor(noteFrequency, 0.3);
 }
 
 function colorButtonHandler(event) {
